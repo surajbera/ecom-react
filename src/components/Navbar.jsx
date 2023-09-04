@@ -1,7 +1,32 @@
 import { BiSolidPurchaseTag } from 'react-icons/bi';
 
 const Navbar = () => {
-  const headerLinks = ['Home', 'Products', 'Login', 'Sign Up', 'My Orders', 'Logout'];
+  const headerLinks = [
+    {
+      link: '/',
+      text: 'Home',
+    },
+    {
+      link: '/products',
+      text: 'Products',
+    },
+    {
+      link: '/login',
+      text: 'Login',
+    },
+    {
+      link: '/signup',
+      text: 'Sign Up',
+    },
+    {
+      link: '/cart',
+      text: 'My Orders',
+    },
+    {
+      link: '/logout',
+      text: 'Logout',
+    },
+  ];
   const navLinkClasses =
     'block py-2 pr-4 pl-3 text-black rounded bg-light-700 lg:bg-transparent lg:text-primary-700 lg:p-0 dark:text-white text-sm hover:text-light-700 dark:hover:text-dark-200';
 
@@ -64,8 +89,8 @@ const Navbar = () => {
           <ul className='flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0'>
             {headerLinks.map((link) => (
               <li key={link}>
-                <a href='#' className={navLinkClasses}>
-                  {link}
+                <a href={link.link} className={navLinkClasses}>
+                  {link.text}
                 </a>
               </li>
             ))}
