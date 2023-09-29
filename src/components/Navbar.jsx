@@ -33,18 +33,18 @@ const Navbar = () => {
     },
   ];
   const navLinkClasses =
-    'block py-2 px-4 text-black lg:rounded bg-light-100 text-sm lg:bg-transparent border-solid lg:text-primary-700 lg:p-0 dark:text-white hover:text-light-700 dark:hover:text-dark-200 dark:bg-slate-600 dark:text-slate-100';
+    'block py-2 px-4 text-black lg:rounded bg-light-100 text-sm lg:bg-transparent border-solid lg:text-primary-700 lg:p-0 dark:text-white hover:text-light-700 dark:hover:text-dark-200 dark:bg-slate-600 dark:text-slate-100 lg:dark:bg-transparent';
 
   return (
-    <header>
-      <nav className='bg-white border-gray-200 px-4 py-2.5 dark:bg-slate-600 mx-auto max-w-screen-xl'>
+    <header className='bg-white dark:bg-slate-700'>
+      <nav className=' border-gray-200 px-4 py-4  mx-auto max-w-screen-xl'>
         <div className='flex flex-wrap items-center justify-between'>
           <div className='flex gap-4'>
             <a href='https://flowbite.com' className='flex items-center gap-1'>
               <span>
                 <BiSolidPurchaseTag size={24} color='#1e40af' />
               </span>
-              <span className='self-center text-xl font-semibold whitespace-nowrap dark:text-white text-light-700 dark:text-white'>
+              <span className='self-center text-xl font-semibold whitespace-nowrap dark:text-white text-light-700'>
                 EcomReact
               </span>
             </a>
@@ -77,7 +77,7 @@ const Navbar = () => {
                 <input
                   type='search'
                   id='default-search'
-                  className='block w-full p-2 pl-9 pr-20 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-light-500 focus:border-light-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-dark-500 dark:focus:border-dark-500'
+                  className='block w-full p-2 pl-9 pr-20 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-light-500 focus:border-light-500 dark:bg-gray-700 dark:border-gray-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-dark-500 dark:focus:border-dark-500'
                   placeholder='Search Products...'
                   required=''
                 />
@@ -98,7 +98,7 @@ const Navbar = () => {
             <ul
               className={`${
                 showMenu ? '' : 'hidden'
-              } border-2 border-transparent border-solid dark:border-slate-500 lg:flex flex-col font-medium lg:flex-row lg:space-x-8 lg:mt-0 rounded-lg overflow-hidden absolute top-6 right-0 w-[150px] lg:relative lg:top-auto lg:right-auto lg:w-full`}
+              } lg:flex flex-col lg:flex-row border-2 border-transparent border-solid dark:border-slate-500 lg:border-0 font-medium lg:space-x-8 lg:mt-0 rounded-lg overflow-hidden absolute top-6 right-0 w-[150px] lg:relative lg:top-auto lg:right-auto lg:w-full`}
             >
               {headerLinks.map((link, index) => (
                 <li key={link.text}>
@@ -118,6 +118,7 @@ const Navbar = () => {
           </div>
         </div>
       </nav>
+      {showMenu ? 'True' : 'False'}
     </header>
   );
 };
