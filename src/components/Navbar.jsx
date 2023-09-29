@@ -1,6 +1,11 @@
+import { useState } from 'react';
 import { BiSolidPurchaseTag } from 'react-icons/bi';
+import { AiOutlineMenu } from 'react-icons/ai';
+import { RxCross2 } from 'react-icons/rx';
 
 const Navbar = () => {
+  const [showMenu, setShowMenu] = useState(false);
+
   const headerLinks = [
     {
       link: '/',
@@ -28,12 +33,12 @@ const Navbar = () => {
     },
   ];
   const navLinkClasses =
-    'block py-2 pr-4 pl-3 text-black rounded bg-light-700 lg:bg-transparent lg:text-primary-700 lg:p-0 dark:text-white text-sm hover:text-light-700 dark:hover:text-dark-200';
+    'block py-2 px-4 text-black lg:rounded bg-light-100 text-sm lg:bg-transparent border-solid lg:text-primary-700 lg:p-0 dark:text-white hover:text-light-700 dark:hover:text-dark-200 dark:bg-slate-600 dark:text-slate-100';
 
   return (
     <header>
-      <nav className='bg-white border-gray-200 px-4 py-2.5 dark:bg-slate-600'>
-        <div className='flex flex-wrap items-center mx-auto max-w-screen-xl justify-between'>
+      <nav className='bg-white border-gray-200 px-4 py-2.5 dark:bg-slate-600 mx-auto max-w-screen-xl'>
+        <div className='flex flex-wrap items-center justify-between'>
           <div className='flex gap-4'>
             <a href='https://flowbite.com' className='flex items-center gap-1'>
               <span>
@@ -86,15 +91,31 @@ const Navbar = () => {
             </form>
           </div>
 
-          <ul className='flex flex-col mt-4 font-medium lg:flex-row lg:space-x-8 lg:mt-0'>
-            {headerLinks.map((link) => (
-              <li key={link}>
-                <a href={link.link} className={navLinkClasses}>
-                  {link.text}
-                </a>
-              </li>
-            ))}
-          </ul>
+          <div className='flex gap-4 items-center relative'>
+            <span className='cursor-pointer flex lg:hidden' onClick={() => setShowMenu(!showMenu)}>
+              {showMenu ? <RxCross2 /> : <AiOutlineMenu />}
+            </span>
+            <ul
+              className={`${
+                showMenu ? '' : 'hidden'
+              } border-2 border-transparent border-solid dark:border-slate-500 lg:flex flex-col font-medium lg:flex-row lg:space-x-8 lg:mt-0 rounded-lg overflow-hidden absolute top-6 right-0 w-[150px] lg:relative lg:top-auto lg:right-auto lg:w-full`}
+            >
+              {headerLinks.map((link, index) => (
+                <li key={link.text}>
+                  <a
+                    href={link.link}
+                    className={` ${navLinkClasses} ${
+                      index < headerLinks.length - 1
+                        ? 'border-b-2 border-light-200 dark:border-slate-500 lg:border-b-0'
+                        : 'lg:border-b-0'
+                    } `}
+                  >
+                    {link.text}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
       </nav>
     </header>
