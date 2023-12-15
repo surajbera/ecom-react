@@ -10,6 +10,8 @@ const FeaturedProducts = () => {
 
         <div>
           <ProductCard />
+          <ProductCard />
+          <ProductCard />
         </div>
       </div>
     </section>
