@@ -14,18 +14,20 @@ const Navbar = () => {
 
   return (
     <header className='bg-white dark:bg-slate-700'>
-      <nav className=' border-gray-200 px-4 py-4  mx-auto max-w-screen-xl'>
+      <nav className=' border-gray-200 px-4 py-3  mx-auto max-w-screen-xl'>
         <div className='flex flex-wrap items-center justify-between'>
-          <div className='flex gap-4'>
+          <div className='flex-1 flex justify-center'>
             <Link to='/' className='flex items-center gap-1'>
               <span>
-                <BiSolidPurchaseTag size={24} className='text-light-700 dark:text-white' />
+                <BiSolidPurchaseTag size={26} className='text-light-700 dark:text-white' />
               </span>
-              <span className='self-center text-xl font-semibold whitespace-nowrap dark:text-white text-light-700'>
+              <span className='self-center text-2xl font-semibold whitespace-nowrap dark:text-white text-light-700'>
                 EcomReact
               </span>
             </Link>
+          </div>
 
+          <div className='mt-2 flex justify-between flex-1'>
             <form className='min-w-[300px]' autoComplete='off'>
               <label
                 htmlFor='default-search'
@@ -52,35 +54,35 @@ const Navbar = () => {
                 </button>
               </div>
             </form>
-          </div>
 
-          <div className='flex gap-4 items-center relative'>
-            <button
-              className='cursor-pointer flex lg:hidden'
-              onClick={() => setShowMenu(!showMenu)}
-            >
-              {showMenu ? <RxCross2 /> : <AiOutlineMenu />}
-            </button>
-            <ul
-              className={`${
-                showMenu ? '' : 'hidden'
-              } flex-col border-2 border-transparent border-solid dark:border-slate-500 font-medium rounded-lg overflow-hidden absolute top-6 right-0 w-[150px] lg:flex lg:flex-row lg:mt-0 lg:border-0 lg:space-x-8 lg:relative lg:top-auto lg:right-auto lg:w-full`}
-            >
-              {headerMenuLinks.map((link, index) => (
-                <li key={link.text}>
-                  <a
-                    href={link.link}
-                    className={` block py-2 px-4 text-black lg:rounded bg-light-100 text-sm lg:bg-transparent border-solid lg:text-primary-700 lg:p-0 hover:text-light-700 dark:hover:text-dark-200 dark:bg-slate-600 dark:text-slate-100 lg:dark:bg-transparent ${
-                      index < headerMenuLinks.length - 1
-                        ? 'border-b-2 border-light-200 dark:border-slate-500 lg:border-b-0'
-                        : 'lg:border-b-0'
-                    } `}
-                  >
-                    {link.text}
-                  </a>
-                </li>
-              ))}
-            </ul>
+            <div className='flex gap-4 items-center relative'>
+              <button
+                className='cursor-pointer flex lg:hidden'
+                onClick={() => setShowMenu(!showMenu)}
+              >
+                {showMenu ? <RxCross2 /> : <AiOutlineMenu />}
+              </button>
+              <ul
+                className={`${
+                  showMenu ? '' : 'hidden'
+                } flex-col border-2 border-transparent border-solid dark:border-slate-500 font-medium rounded-lg overflow-hidden absolute top-6 right-0 w-[150px] lg:flex lg:flex-row lg:mt-0 lg:border-0 lg:space-x-8 lg:relative lg:top-auto lg:right-auto lg:w-full`}
+              >
+                {headerMenuLinks.map((link, index) => (
+                  <li key={link.text}>
+                    <a
+                      href={link.link}
+                      className={` block py-2 px-4 text-black lg:rounded bg-light-100 text-sm lg:bg-transparent border-solid lg:text-primary-700 lg:p-0 hover:text-light-700 dark:hover:text-dark-200 dark:bg-slate-600 dark:text-slate-100 lg:dark:bg-transparent ${
+                        index < headerMenuLinks.length - 1
+                          ? 'border-b-2 border-light-200 dark:border-slate-500 lg:border-b-0'
+                          : 'lg:border-b-0'
+                      } `}
+                    >
+                      {link.text}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
       </nav>
