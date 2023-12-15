@@ -7,20 +7,17 @@ import { LuSearch } from 'react-icons/lu';
 import { Link } from 'react-router-dom';
 
 // utils
-import { headerMenuLinks } from '../utils';
+import { headerMenuLinks } from '../../utils';
 
 const Navbar = () => {
   const [showMenu, setShowMenu] = useState(false);
-
-  const navLinkClasses =
-    'block py-2 px-4 text-black lg:rounded bg-light-100 text-sm lg:bg-transparent border-solid lg:text-primary-700 lg:p-0 dark:text-white hover:text-light-700 dark:hover:text-dark-200 dark:bg-slate-600 dark:text-slate-100 lg:dark:bg-transparent';
 
   return (
     <header className='bg-white dark:bg-slate-700'>
       <nav className=' border-gray-200 px-4 py-4  mx-auto max-w-screen-xl'>
         <div className='flex flex-wrap items-center justify-between'>
           <div className='flex gap-4'>
-            <Link to='https://flowbite.com' className='flex items-center gap-1'>
+            <Link to='/' className='flex items-center gap-1'>
               <span>
                 <BiSolidPurchaseTag size={24} className='text-light-700 dark:text-white' />
               </span>
@@ -38,7 +35,7 @@ const Navbar = () => {
               </label>
               <div className='relative'>
                 <div className='absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none'>
-                  <LuSearch style={{ fontSize: '18px' }} className='text-gray-400' />
+                  <LuSearch size='24' className='text-gray-400' />
                 </div>
                 <input
                   type='search'
@@ -73,7 +70,7 @@ const Navbar = () => {
                 <li key={link.text}>
                   <a
                     href={link.link}
-                    className={` ${navLinkClasses} ${
+                    className={` block py-2 px-4 text-black lg:rounded bg-light-100 text-sm lg:bg-transparent border-solid lg:text-primary-700 lg:p-0 hover:text-light-700 dark:hover:text-dark-200 dark:bg-slate-600 dark:text-slate-100 lg:dark:bg-transparent ${
                       index < headerMenuLinks.length - 1
                         ? 'border-b-2 border-light-200 dark:border-slate-500 lg:border-b-0'
                         : 'lg:border-b-0'
