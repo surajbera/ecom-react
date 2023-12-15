@@ -22,3 +22,5 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+/Resources Folder
+/Project+3+API+Documentation.pdf
