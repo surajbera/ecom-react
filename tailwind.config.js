@@ -36,8 +36,10 @@ export default {
         },
       },
       screens: {
-        xs: '320px',
-        sm: '640px',
+        xs: '320px', // extra small
+        nms: '390px', // near medium small
+        ms: '570px', // medium small
+        sm: '640px', // small
         md: '768px',
         lg: '1024px',
         xl: '1280px',
