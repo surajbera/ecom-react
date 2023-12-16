@@ -9,5 +9,16 @@ import Navbar from './layout/Navbar';
 // header
 import HeaderLogo from './header/HeaderLogo';
 import HeaderSearchForm from './header/HeaderSearchForm';
+import MobileNavLinks from './header/MobileNavLinks';
+import DesktopNavLinks from './header/DesktopNavLinks';
 
-export { FeaturedProducts, HeroSection, Navbar, ProductCard, HeaderLogo, HeaderSearchForm };
+export {
+  FeaturedProducts,
+  HeroSection,
+  Navbar,
+  ProductCard,
+  HeaderLogo,
+  HeaderSearchForm,
+  MobileNavLinks,
+  DesktopNavLinks,
+};
