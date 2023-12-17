@@ -1,10 +1,10 @@
 // components
 import { DesktopNavLinks, HeaderLogo, HeaderSearchForm, MobileNavLinks } from '../../components';
 
-const Navbar = () => {
+const Header = () => {
   return (
     <header className='bg-white dark:bg-slate-700'>
-      <nav className=' border-gray-200 px-4 py-3  mx-auto max-w-screen-xl'>
+      <div className=' border-gray-200 px-4 py-3  mx-auto max-w-screen-xl'>
         <div className='flex flex-wrap items-center justify-between flex-col ms:flex-row'>
           <div className='flex-1 flex justify-center ms:flex-none'>
             <HeaderLogo />
@@ -15,9 +15,9 @@ const Navbar = () => {
             <HeaderSearchForm />
           </div>
         </div>
-      </nav>
+      </div>
     </header>
   );
 };
 
-export default Navbar;
+export default Header;

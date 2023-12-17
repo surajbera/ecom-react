@@ -1,10 +1,10 @@
 // components
-import { Navbar, HeroSection, FeaturedProducts } from '../components';
+import { Header, HeroSection, FeaturedProducts } from '../components';
 
 const Homepage = () => {
   return (
     <>
-      <Navbar />
+      <Header />
       <HeroSection
         title={'Buy iPhone 14 Pro'}
         subtitle={'Experience the power of the latest iPhone 14 with our most Pro camera ever'}

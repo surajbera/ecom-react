@@ -4,7 +4,7 @@ import HeroSection from './home/HeroSection';
 import ProductCard from './home/ProductCard';
 
 // layout
-import Navbar from './layout/Navbar';
+import Header from './layout/Header';
 
 // header
 import HeaderLogo from './header/HeaderLogo';
@@ -15,7 +15,7 @@ import DesktopNavLinks from './header/DesktopNavLinks';
 export {
   FeaturedProducts,
   HeroSection,
-  Navbar,
+  Header,
   ProductCard,
   HeaderLogo,
   HeaderSearchForm,
